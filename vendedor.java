@@ -14,8 +14,7 @@ void main(){
     }
     if (avaliacao >= 8){
         Salario += 500.00;
-    } else{
 
     }
-    IO.println(Salario);
+    IO.println(String.format("", Salario));
 }
