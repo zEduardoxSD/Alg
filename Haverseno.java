@@ -1,11 +1,15 @@
 void main (){
-    String buffer = IO.readln("Entre primeiro com as cordenadas do primeiro local depois do segundo");
-    double La1 = Math.toRadians(Double.parseDouble(buffer));
-    double lo1 = Math.toRadians(Double.parseDouble(buffer));
-    double La2 = Math.toRadians(Double.parseDouble(buffer));
-    double lo2 = Math.toRadians(Double.parseDouble(buffer));
-    double DistanciaFinal = distanciaTerra;
-    IO.println("A distancia entre dois pontos é: " (distanciaTerra));
+    String partes[];
+    String buffer = IO.readln("Entre primeiro com as cordenadas do primeiro local : ");
+    partes = buffer.split(" ");
+    double La1 = Math.toRadians(Double.parseDouble(partes[0]));
+    double lo1 = Math.toRadians(Double.parseDouble(partes[1]));
+    buffer = IO.readln("Entre vom as coordenadas do segundo local: ");
+    partes = buffer.split(" ");
+    double La2 = Math.toRadians(Double.parseDouble(partes[0]));
+    double lo2 = Math.toRadians(Double.parseDouble(partes[1]));
+    double DistanciaFinal = distanciaTerra(La1, lo1, La2, lo2);
+    IO.println("A distancia entre dois pontos é: "  + String.format("%.2f", DistanciaFinal) + "km");
 }
 
 double distanciaTerra(double La1, double lo1, double La2, double lo2){
