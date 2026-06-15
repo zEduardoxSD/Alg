@@ -2,7 +2,17 @@ final String[] PARTIDA = {"08:00","09:43","11:19","12:47", "14:00", "15:45","19:
 final String[] CHEGADA = {"10:16","11:52","13:31","15:00","16:08","17:55","21:20","23:58"};
 void main() {
     String buffer = IO.readln("Entre com o horário atual (HH:MM): ");
-    if (horarioParaMinutos(buffer) <= horarioParaMinutos(PARTIDA[0]) ) {
+    for(int i=0; i<8; i++){
+        if (horarioParaMinutos(buffer) <= horarioParaMinutos(PARTIDA[i]) ) {
+        IO.println("Próxima partida: " + PARTIDA[i]);
+        IO.println("Horário de chegada: " + CHEGADA[i]);
+        break;
+    } else if(i >= 7)  {
+    IO.println("Não há mais voos disponíveis hoje");
+    }
+   
+}
+   /* if (horarioParaMinutos(buffer) <= horarioParaMinutos(PARTIDA[0]) ) {
         IO.println("Próxima partida: " + PARTIDA[0]);
         IO.println("Horário de chegada: " + CHEGADA[0]);
     }
@@ -33,7 +43,7 @@ void main() {
         else if (horarioParaMinutos(buffer) <= horarioParaMinutos(PARTIDA[7]) ) {
         IO.println("Próxima partida: " + PARTIDA[7]);
         IO.println("Horário de chegada: " + CHEGADA[7]);
-    }else IO.println("Não há mais voos disponíveis hoje");
+    }else IO.println("Não há mais voos disponíveis hoje");*/
 }
 int horarioParaMinutos(String horario) {
     String[] partes = horario.split(":");
